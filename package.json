@@ -10,6 +10,7 @@
     "cities": "node ./models/data/cities.js",
     "itineraries": "node ./models/data/itineraries.js",
     "activities": "node  ./models/data/activities.js"
+
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
