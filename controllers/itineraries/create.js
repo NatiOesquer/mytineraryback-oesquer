@@ -1,6 +1,6 @@
 import Itinerary from '../../models/Itinerary.js'
 
-export default async (req,res)=> {
+export default async (req,res,next)=> {
 
     try {
         let newItineray = await Itinerary.create(req.body);
@@ -10,12 +10,7 @@ export default async (req,res)=> {
           response: newItineray._id,
         });
       } catch (error) {
-        console.log(error);
-        return res.status(400).json({
-          success: false,
-          message: "Itinerary not created",
-          response: null,
-        });
+       next(error)
       }
     
    
