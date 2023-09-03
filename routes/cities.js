@@ -9,20 +9,17 @@ import carousel from "../controllers/cities/carousel.js";
 let router = express.Router();
 
 //CREATE
-router.post('/',create)
-
+router.post('/', create)
 
 //READ
-router.get('/',read)
+router.get('/', read)
 router.get('/carousel', carousel)
-router.get('/:id',readOne)
-
+router.get('/:id', readOne)   
 
 //UPDATE
-router.put('/:uc_id',update)
-
+router.put('/:uc_id', update)
 
 //DESTROY
-router.delete('/:id',destroy)
+router.delete('/:id', destroy)
 
 export default router
