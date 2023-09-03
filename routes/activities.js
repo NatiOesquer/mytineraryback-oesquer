@@ -20,4 +20,5 @@ router.put("/:u_id", update);
 //DESTROY
 router.delete("/:d_id", destroy);
 
+
 export default router;

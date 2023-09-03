@@ -10,16 +10,16 @@ let router = express.Router();
 
 
 //CREATE
-router.post('/signup',create)
+router.post('/', create)
 
 //READ
-router.get('/',read)
-router.get('/:userId',readOne)
+router.get('/', read)
+router.get('/:user_id', readOne)
 
 //UPDATE
-router.put('/:u_id',update)
+router.put('/:u_id', update)
 
-//DESTROY
-router.delete('/:id',destroy)
+
+router.delete('/:id', destroy)
 
 export default router;
