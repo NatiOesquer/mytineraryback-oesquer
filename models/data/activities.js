@@ -224,10 +224,12 @@ const activities = [{
 async function createActivities(arrayActivities){
     try {
         await connect(process.env.LINK_DB)
-        for( let activity of arrayActivities){
-            let itinerary = await Itinerary.findOne({ itinerary:activities.itinerary_id})
-            activity.itinerary_id = itinerary._id
+        for(let activity of arrayActivities){
+            let itinerary_id = await Itinerary.findOne({name:activity.itinerary_id})
+            //let itinerary_id = await itinerary_find._id
+            activity.itinerary_id = itinerary_id
             await Activity.create(activity)
+
         }
         console.log('done!');
     } catch (error) {
