@@ -6,7 +6,7 @@ export default async (req, res) => {
         req.params.u_id,
         req.body,
         { new: true }
-      ).select("name photo");
+      ).select("name photo"); 
       return res.status(200).json({
         success: true,
         message: "Activity updated!",
