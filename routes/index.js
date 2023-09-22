@@ -4,6 +4,7 @@ import citiRouter from './cities.js'
 import itinerariesRouter from './itineraries.js'
 import activitiesRouter from './activities.js'
 import authRouter from './auth.js';
+import likesRouter from './likes.js';
 
 
 let router = express.Router();
@@ -19,5 +20,6 @@ router.use('/cities',citiRouter)
 router.use('/itineraries',itinerariesRouter)
 router.use('/activities',activitiesRouter)
 router.use('/auth',authRouter)
+router.use('/likes',likesRouter)
 
 export default router;
