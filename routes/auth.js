@@ -13,15 +13,18 @@ import isPassOk from "../middlewares/isPassOk.js"
 import isValidToken from "../middlewares/isValidToken.js"
 import token from "../controllers/auth/token.js"
 import signout from "../controllers/auth/signout.js"
+import google from "../controllers/auth/google.js"
+import verifyGoogle from "../middlewares/verifyGoogle.js"
+import findOrCreate from "../middlewares/findOrCreate.js"
 
 
 
 let authRouter = Router()
 
-authRouter.post('/register',validator(registerSchema),existsUser,isValidPass,register)
-authRouter.post('/signin',validator(signinSchema),notExistsUser,isPassOk,isValidToken,signin)
+authRouter.post('/register', validator(registerSchema), existsUser, isValidPass, register)
+authRouter.post('/signin', validator(signinSchema), notExistsUser, isPassOk, isValidToken, signin)
 authRouter.post('/token', passport.authenticate('jwt', { session: false }), isValidToken, token)
 authRouter.post('/signout', passport.authenticate("jwt", { session: false }), signout);
-
+authRouter.post('/google', verifyGoogle, findOrCreate, isValidToken, google)
 
 export default authRouter
